@@ -2,411 +2,257 @@
 <html lang="fa" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#090813">
-<title>AniStorm Shop</title>
-
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#070711">
+<title>AniStorm // SHADOW X</title>
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap');
+:root{--bg:#070711;--panel:#10101d;--panel2:#171629;--line:#292640;--violet:#8c4dff;--violet2:#b69aff;--cyan:#5ef5ff;--pink:#ff4fc8;--gold:#ffcf70;--text:#f7f5ff;--muted:#9793ad;--green:#7dffbd}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:Vazirmatn,Tahoma,sans-serif;min-height:100vh;overflow-x:hidden}button,input{font:inherit}button{cursor:pointer;color:inherit}button:focus-visible,input:focus-visible{outline:2px solid var(--cyan);outline-offset:3px}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-2;background:radial-gradient(ellipse at 80% -10%,#48207955,transparent 42%),radial-gradient(ellipse at 0% 50%,#12264a33,transparent 40%),linear-gradient(180deg,#080713,#070711 70%)}
+.noise{position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.12;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.22'/%3E%3C/svg%3E")}
+.app{max-width:560px;margin:auto;padding-bottom:100px}.topbar{position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;padding:14px 17px;background:#080812d9;border-bottom:1px solid #ffffff10;backdrop-filter:blur(18px)}.brand{display:flex;align-items:center;gap:10px}.brandmark{width:38px;height:38px;display:grid;place-items:center;border:1px solid #9e6cff88;border-radius:13px;background:linear-gradient(145deg,#39205f,#11101e);box-shadow:0 0 22px #8c4dff25;font-size:20px}.brandname{font-weight:900;letter-spacing:.4px;font-size:15px}.brandname span{color:var(--violet2)}.brandtag{font-size:9px;color:var(--muted);letter-spacing:2px;direction:ltr}.top-actions{display:flex;gap:8px}.iconbtn{width:39px;height:39px;border:1px solid var(--line);background:#11101d;border-radius:13px;display:grid;place-items:center;font-size:17px}.iconbtn:active{transform:scale(.95)}
+.hero{margin:15px 13px 0;position:relative;overflow:hidden;min-height:292px;border-radius:25px;border:1px solid #7144b866;background:linear-gradient(125deg,#21123d 0%,#10101f 54%,#0c1928 100%);box-shadow:0 20px 55px #0007}.hero:before{content:"";position:absolute;width:290px;height:290px;border-radius:50%;left:-90px;top:10px;background:radial-gradient(circle,#8c4dff4a 0%,#8c4dff09 48%,transparent 70%);filter:blur(8px)}.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(115deg,transparent 20%,#ffffff05 48%,transparent 70%);transform:translateX(-100%);animation:sweep 7s ease-in-out infinite}.hero-grid{position:absolute;inset:0;opacity:.16;background-image:linear-gradient(#9d7bff22 1px,transparent 1px),linear-gradient(90deg,#9d7bff22 1px,transparent 1px);background-size:28px 28px;mask-image:linear-gradient(90deg,black,transparent)}.hero-content{position:relative;z-index:2;padding:26px 22px 22px;max-width:350px}.eyebrow{font-size:10px;letter-spacing:2px;color:var(--cyan);direction:ltr;text-align:right}.hero h1{font-size:36px;line-height:1.12;margin:10px 0 9px;font-weight:900;letter-spacing:-1px}.hero h1 em{font-style:normal;color:transparent;background:linear-gradient(90deg,#fff,#b99cff 55%,#5ef5ff);background-clip:text}.hero p{font-size:12px;color:#c3bfd8;line-height:2;margin:0 0 17px;max-width:260px}.hero-cta{display:flex;gap:9px;align-items:center}.primary{border:0;padding:12px 16px;border-radius:12px;background:linear-gradient(110deg,#a66cff,#6933d8);font-weight:800;font-size:12px;box-shadow:0 8px 25px #8c4dff3d}.secondary{border:1px solid #ffffff22;padding:11px 14px;border-radius:12px;background:#ffffff08;font-size:12px;font-weight:700}.hero-orb{position:absolute;right:58%;top:51px;width:205px;height:205px;border-radius:50%;border:1px solid #bda0ff33;box-shadow:inset 0 0 35px #8c4dff1c,0 0 55px #8c4dff1c}.hero-orb:before,.hero-orb:after{content:"";position:absolute;border:1px solid #8b75c955;border-radius:50%;inset:18px;transform:rotateX(65deg) rotate(35deg)}.hero-orb:after{inset:35px;transform:rotateY(65deg) rotate(-35deg);border-color:#5ef5ff44}.orb-core{position:absolute;inset:53px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#e9e0ff,#8d54ff 30%,#241044 72%);box-shadow:0 0 30px #995bff99,0 0 70px #995bff45;display:grid;place-items:center;font-size:50px;animation:float 5s ease-in-out infinite}.hero-stats{display:flex;gap:8px;margin:15px 13px 0}.stat{flex:1;padding:11px 12px;border:1px solid #ffffff10;border-radius:14px;background:#ffffff04}.stat b{display:block;font-size:14px}.stat span{display:block;font-size:10px;color:var(--muted);margin-top:2px}.section-head{display:flex;align-items:end;justify-content:space-between;padding:25px 17px 12px}.section-head h2{font-size:18px;margin:0;font-weight:900}.section-head p{font-size:10px;color:var(--muted);margin:4px 0 0}.mini-link{border:0;background:none;color:var(--violet2);font-size:11px;font-weight:700}.searchrow{display:flex;gap:8px;padding:0 14px 12px}.search{flex:1;display:flex;align-items:center;gap:9px;background:#10101c;border:1px solid var(--line);border-radius:13px;padding:0 13px}.search input{width:100%;border:0;outline:0;background:transparent;color:var(--text);padding:12px 0;font-size:12px}.filter{border:1px solid var(--line);background:#10101c;border-radius:13px;padding:0 13px;font-size:12px;color:#d7d2e8}.chips{display:flex;gap:8px;overflow:auto;padding:0 14px 13px;scrollbar-width:none}.chips::-webkit-scrollbar{display:none}.chip{white-space:nowrap;border:1px solid var(--line);border-radius:999px;padding:8px 14px;background:#11101d;color:#aaa5c0;font-size:11px}.chip.active{background:#6e39bd24;color:#e4d6ff;border-color:#8c4dff99;box-shadow:inset 0 0 14px #8c4dff0d}
+.products{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px;padding:0 13px}.product{position:relative;overflow:hidden;border:1px solid #302b49;border-radius:18px;background:linear-gradient(145deg,#19172b,#0e0e19);padding:13px;transition:.22s}.product:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 0%,var(--glow,#8c4dff22),transparent 60%);pointer-events:none}.product:active{transform:scale(.98)}.product-top{display:flex;justify-content:space-between;align-items:center;position:relative}.tag{font-size:9px;padding:5px 8px;border-radius:7px;background:#8c4dff1c;color:#cbb4ff;border:1px solid #8c4dff35}.heart{border:0;background:transparent;color:#77728e;font-size:17px;padding:0}.heart.on{color:#ff66bd}.product-art{height:94px;display:grid;place-items:center;position:relative}.crystal{font-size:48px;filter:drop-shadow(0 0 17px var(--glow,#8c4dff88));transform:translateY(0);animation:float 4s ease-in-out infinite}.art-ring{position:absolute;width:74px;height:74px;border:1px solid #a58aff33;border-radius:50%;box-shadow:0 0 25px #8c4dff15}.product h3{position:relative;font-size:14px;margin:3px 0 2px}.product .meta{position:relative;color:var(--muted);font-size:10px}.product-bottom{position:relative;display:flex;align-items:center;justify-content:space-between;gap:6px;margin-top:13px}.price{font-size:12px;font-weight:900;color:#f2eaff}.buymini{border:0;width:34px;height:34px;border-radius:11px;background:linear-gradient(140deg,#a66cff,#6737cb);font-size:19px;box-shadow:0 5px 14px #8c4dff30}.empty{grid-column:1/-1;text-align:center;color:var(--muted);padding:30px 10px;font-size:13px}
+.promo{margin:15px 13px 0;padding:16px;border-radius:18px;border:1px solid #ffcf7033;background:linear-gradient(110deg,#3b2a171c,#171321);display:flex;align-items:center;gap:12px}.promo-icon{width:45px;height:45px;border-radius:14px;display:grid;place-items:center;background:#ffcf7018;font-size:22px}.promo strong{font-size:12px}.promo p{font-size:10px;color:var(--muted);margin:3px 0 0;line-height:1.8}
+.panel{margin:14px 13px 0;padding:17px;border:1px solid var(--line);border-radius:20px;background:linear-gradient(145deg,#171528,#0e0e18)}.arena-head{display:flex;justify-content:space-between;align-items:center}.arena-head h3{font-size:16px;margin:0}.live{font-size:9px;color:var(--green);border:1px solid #7dffbd35;background:#7dffbd0b;padding:5px 8px;border-radius:99px}.arena-card{margin-top:14px;position:relative;overflow:hidden;border-radius:17px;border:1px solid #8c4dff45;background:linear-gradient(120deg,#25133f,#11111f 65%,#152033);padding:17px;display:flex;align-items:center;gap:12px}.arena-sigil{flex:0 0 78px;height:92px;display:grid;place-items:center;font-size:45px;filter:drop-shadow(0 0 16px #9a5cffaa);background:linear-gradient(160deg,#8c4dff20,#5ef5ff08);border:1px solid #a68aff30;border-radius:15px}.arena-info{flex:1}.arena-info small{color:var(--cyan);font-size:9px;letter-spacing:1px}.arena-info h4{font-size:16px;margin:3px 0}.arena-info p{font-size:10px;color:#b3aec9;margin:0 0 10px}.xp-row{display:flex;justify-content:space-between;font-size:9px;color:#bdb5d4;margin-bottom:6px}.xpbar{height:6px;background:#ffffff12;border-radius:99px;overflow:hidden}.xpbar i{display:block;width:68%;height:100%;background:linear-gradient(90deg,var(--violet),var(--cyan));border-radius:99px;box-shadow:0 0 10px #8c4dff}.arena-actions{display:flex;gap:8px;margin-top:12px}.arena-actions button{flex:1}.ghostbtn{background:#ffffff07;border:1px solid #ffffff18;border-radius:11px;padding:10px;font-size:11px;font-weight:700}.featured-chars{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-top:12px}.char{min-width:0;border:1px solid #ffffff12;border-radius:14px;padding:11px 5px;background:#ffffff04;text-align:center}.char .avatar{font-size:29px;filter:drop-shadow(0 0 9px #9d5cff66)}.char b{display:block;font-size:10px;margin-top:5px}.char small{color:var(--muted);font-size:9px}
+.casino-box{margin:14px 13px 0;border:1px solid #7b5baf44;border-radius:20px;padding:18px;background:radial-gradient(ellipse at top,#4a2a701c,transparent 65%),#10101b}.casino-top{display:flex;justify-content:space-between;align-items:center}.casino-top h3{font-size:16px;margin:0}.coin{font-size:10px;color:var(--gold);border:1px solid #ffcf7030;padding:6px 9px;border-radius:9px}.daily{display:flex;align-items:center;gap:12px;margin-top:14px}.daily-wheel{width:65px;height:65px;border-radius:50%;display:grid;place-items:center;font-size:27px;border:2px solid #b68aff66;background:conic-gradient(#8c4dff55,#5ef5ff22,#ff4fc833,#8c4dff55);box-shadow:0 0 20px #8c4dff20}.daily-text{flex:1}.daily-text b{font-size:12px}.daily-text p{font-size:10px;line-height:1.8;color:var(--muted);margin:3px 0 0}.daily button{border:1px solid #9d72ff66;background:#8c4dff20;border-radius:10px;padding:9px 11px;font-size:10px;font-weight:800}.casino-note{font-size:9px;color:#8c87a3;margin-top:12px;line-height:1.8}
+.profile-card{margin:14px 13px 0;border:1px solid var(--line);border-radius:20px;padding:18px;background:linear-gradient(135deg,#19152a,#10101b)}.profile-row{display:flex;align-items:center;gap:13px}.profile-avatar{width:58px;height:58px;display:grid;place-items:center;border-radius:18px;background:linear-gradient(145deg,#4c2d77,#171323);border:1px solid #b68aff55;font-size:27px}.profile-row h3{font-size:15px;margin:0}.profile-row p{font-size:10px;color:var(--muted);margin:3px 0 0}.profile-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:17px}.profile-stat{padding:11px 7px;text-align:center;background:#ffffff05;border:1px solid #ffffff0d;border-radius:12px}.profile-stat b{display:block;font-size:14px}.profile-stat span{font-size:9px;color:var(--muted)}
+.bottomnav{position:fixed;bottom:0;left:0;right:0;z-index:30;padding:9px 13px calc(9px + env(safe-area-inset-bottom));background:#090912eF;border-top:1px solid #ffffff12;backdrop-filter:blur(22px)}.navinner{max-width:530px;margin:auto;display:grid;grid-template-columns:repeat(4,1fr);gap:6px}.navitem{border:0;background:transparent;border-radius:14px;padding:8px 4px 6px;color:#77738d;display:flex;flex-direction:column;align-items:center;gap:3px;font-size:9px}.navitem .navicon{font-size:19px;line-height:1.2}.navitem.active{color:#e4d7ff;background:linear-gradient(180deg,#8c4dff24,#8c4dff06);box-shadow:inset 0 0 0 1px #8c4dff25}.navitem.active .navicon{filter:drop-shadow(0 0 8px #9d68ff)}
+.view{display:none}.view.active{display:block;animation:appear .28s ease}.toast{position:fixed;left:50%;bottom:95px;transform:translate(-50%,15px);opacity:0;pointer-events:none;z-index:50;background:#201a32;border:1px solid #8c4dff66;border-radius:12px;padding:12px 16px;font-size:12px;box-shadow:0 12px 35px #0008;transition:.25s;white-space:nowrap;max-width:90vw}.toast.show{opacity:1;transform:translate(-50%,0)}.modal{display:none;position:fixed;inset:0;z-index:60;background:#020208c9;backdrop-filter:blur(10px);align-items:flex-end;justify-content:center;padding:12px}.modal.show{display:flex}.modalbox{width:100%;max-width:520px;max-height:88vh;overflow:auto;border:1px solid #8c4dff66;border-radius:24px;background:linear-gradient(160deg,#1b1730,#0d0d18);padding:20px;box-shadow:0 0 70px #8c4dff18}.modalhead{display:flex;align-items:center;justify-content:space-between}.modalhead h3{margin:0;font-size:18px}.close{width:34px;height:34px;border-radius:10px;border:1px solid var(--line);background:#ffffff08}.modal-desc{font-size:11px;color:var(--muted);line-height:1.9;margin:8px 0 16px}.summary{padding:13px;border:1px solid #ffffff12;border-radius:13px;background:#070710;margin:14px 0;font-size:12px;line-height:2}.summary strong{color:var(--violet2)}.fieldlabel{display:block;font-size:11px;color:#d4cce8;margin:13px 0 7px}.field{width:100%;border:1px solid #35304d;border-radius:12px;background:#090912;color:white;padding:13px;font-size:13px;direction:rtl}.modalbuttons{display:flex;gap:9px;margin-top:16px}.modalbuttons button{flex:1}.err{font-size:11px;color:#ff8fb7;margin-top:10px;line-height:1.8;display:none}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}@keyframes sweep{0%,70%,100%{transform:translateX(-100%)}85%{transform:translateX(100%)}}@keyframes appear{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:translateY(0)}}
+@media(min-width:560px){body{padding-bottom:0}.app{padding-bottom:110px}.hero{min-height:320px}.hero-content{padding:34px 27px}.hero h1{font-size:42px}.hero-orb{right:57%;width:230px;height:230px}.products{gap:13px}.product{padding:15px}.modal{align-items:center}.modalbox{border-radius:24px}}
+@media(max-width:360px){.hero-content{padding:23px 17px}.hero h1{font-size:31px}.hero-orb{right:57%;width:160px;height:160px;top:75px}.orb-core{inset:42px;font-size:37px}.hero p{max-width:210px}.products{gap:8px;padding:0 9px}.product{padding:10px}.product h3{font-size:12px}.price{font-size:11px}.buymini{width:30px;height:30px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;scroll-behavior:auto!important;transition:none!important}}
 
-:root {
-  --bg: #090813;
-  --card: #171426;
-  --purple: #9b5cff;
-  --pink: #ed65dc;
-  --text: #f8f5ff;
-  --muted: #a8a1bd;
-}
+/* SHADOW X — four category panels */
+.category-panels{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px;padding:0 13px 15px}
+.category-panel{position:relative;overflow:hidden;min-height:142px;text-align:right;padding:15px;border:1px solid #37304f;border-radius:19px;background:linear-gradient(145deg,#1b1930 0%,#10101b 72%);color:var(--text);transition:transform .2s,border-color .2s,box-shadow .2s}
+.category-panel:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 100% 0%,var(--panel-glow,#8c4dff2b),transparent 62%);pointer-events:none}
+.category-panel:after{content:"";position:absolute;inset:0;border-radius:inherit;border:1px solid #ffffff08;pointer-events:none}
+.category-panel:active{transform:scale(.985)}
+.category-panel.selected{border-color:#a77aff;box-shadow:0 0 0 1px #8c4dff30,0 12px 30px #0004}
+.panel-topline,.panel-title,.panel-desc,.panel-foot{position:relative;z-index:1}
+.panel-topline{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.panel-index{font-size:9px;letter-spacing:1.6px;color:#aaa3c4;direction:ltr}
+.panel-symbol{width:42px;height:42px;border-radius:13px;display:grid;place-items:center;background:#ffffff08;border:1px solid #ffffff16;color:var(--panel-accent,#c6a9ff);font-weight:900;font-size:16px;box-shadow:inset 0 0 20px #ffffff05}
+.panel-title{font-size:15px;font-weight:900;margin-top:13px}
+.panel-desc{font-size:10px;color:#aaa5bf;margin-top:3px;line-height:1.8}
+.panel-foot{display:flex;align-items:center;justify-content:space-between;margin-top:12px;font-size:10px;color:var(--panel-accent,#c6a9ff);font-weight:800}
+.panel-arrow{font-size:17px}
+.product .crystal{font-size:27px;font-weight:900;letter-spacing:1px;color:#f3edff;text-shadow:0 0 20px var(--glow,#8c4dff88)}
+.product .art-ring{width:78px;height:78px;border-radius:22px;transform:rotate(45deg);border-color:#a58aff25}
+.product .product-art:after{content:"";position:absolute;width:54px;height:54px;border:1px solid #ffffff12;border-radius:15px;transform:rotate(45deg)}
+@media(max-width:360px){.category-panels{gap:8px;padding:0 9px 13px}.category-panel{padding:12px;min-height:136px}.panel-title{font-size:13px}}
 
-* { box-sizing: border-box; }
 
-body {
-  margin: 0;
-  color: var(--text);
-  background:
-    radial-gradient(ellipse at 90% 0%, #40206b55, transparent 45%),
-    radial-gradient(ellipse at 0% 45%, #5d1b6650, transparent 35%),
-    var(--bg);
-  font-family: 'Vazirmatn', Tahoma, sans-serif;
-  min-height: 100vh;
-  padding-bottom: 100px;
-}
+/* GAMING COMMAND CENTER — no anime character/art */
+.hero{min-height:275px;background:linear-gradient(115deg,#100d22 0%,#101323 55%,#071b25 100%);border-color:#514078}
+.hero-content{max-width:390px;padding-top:31px}
+.hero h1{font-size:clamp(29px,7vw,37px);letter-spacing:-.8px}
+.hero h1 em{background:linear-gradient(90deg,#b69aff,#7d8dff 48%,#5ef5ff);background-clip:text}
+.hero-orb,.orb-core{display:none!important}
+.hero-hud{position:absolute;right:5%;top:45px;width:175px;height:175px;border:1px solid #5ef5ff28;border-radius:50%;display:grid;place-items:center;opacity:.92;pointer-events:none}
+.hud-ring{position:absolute;inset:13px;border:1px dashed #8c4dff70;border-radius:50%;animation:spin 24s linear infinite}
+.hud-ring:before,.hud-ring:after{content:"";position:absolute;inset:17px;border:1px solid #5ef5ff30;border-radius:50%;transform:scaleX(.55)}
+.hud-ring:after{transform:scaleY(.55) rotate(45deg);border-color:#a98aff55}
+.hud-core{width:76px;height:76px;border-radius:22px;display:grid;place-items:center;background:linear-gradient(145deg,#3b2264,#101b32);border:1px solid #9f80ff88;box-shadow:0 0 30px #8c4dff33,inset 0 0 20px #5ef5ff12;font-size:26px;font-weight:900;direction:ltr;transform:rotate(45deg)}
+.hud-core span{color:var(--cyan);font-size:16px}
+.hud-line{position:absolute;left:-12px;right:-12px;top:50%;height:1px;background:linear-gradient(90deg,transparent,#5ef5ff88,transparent)}
+.hud-label{position:absolute;bottom:9px;left:50%;transform:translateX(-50%);white-space:nowrap;font-size:8px;letter-spacing:2px;color:var(--cyan);background:#0a101c;padding:4px 8px;border:1px solid #5ef5ff25;border-radius:5px}
+.hero-stats .stat{background:linear-gradient(135deg,#151528,#0b1019);border-color:#ffffff14}
+.category-panel{min-height:151px;border-radius:17px;background:linear-gradient(145deg,#151629,#0a0d16);box-shadow:inset 0 1px #ffffff08}
+.category-panel.selected{background:linear-gradient(145deg,#20183a,#0c111c);box-shadow:0 0 0 1px #8c4dff35,0 12px 28px #0005}
+.panel-symbol{border-radius:12px;font-size:13px;letter-spacing:-.5px}
+.product{border-radius:15px;background:linear-gradient(145deg,#151626,#0a0c14);border-color:#292c43}
+.product-art{height:82px}
+.art-ring{border-radius:18px;transform:rotate(45deg);border-color:#5ef5ff22}
+.crystal{font-size:31px;font-weight:900;letter-spacing:-1px;filter:drop-shadow(0 0 12px var(--glow,#8c4dff88));font-family:Vazirmatn,Tahoma,sans-serif}
+.product:has(.crystal){box-shadow:inset 0 1px #ffffff08}
+.category-panel[data-cat="vpn"] .panel-symbol{font-size:10px}
+@keyframes spin{to{transform:rotate(360deg)}}
+@media(max-width:390px){.hero-hud{right:-22px;opacity:.62;transform:scale(.82)}.hero-content{max-width:310px}.hero p{max-width:235px}.hero h1{font-size:30px}}
 
-button { font: inherit; cursor: pointer; }
 
-.container {
-  max-width: 540px;
-  margin: auto;
-  padding: 20px 16px;
-}
+/* PRO FINISH — responsive esports storefront */
+:root{--bg:#06070d;--panel:#0d101a;--panel2:#131827;--line:#252c3c;--violet:#8b5cf6;--violet2:#c4b5fd;--cyan:#67e8f9}
+body:before{background:radial-gradient(ellipse at 85% 0%,#5426a333,transparent 38%),radial-gradient(ellipse at 0% 38%,#07598520,transparent 36%),linear-gradient(180deg,#070810,#05060b 75%)}
+.topbar{border-bottom-color:#a78bfa20;box-shadow:0 8px 28px #0003}
+.brandmark{border-radius:12px;background:linear-gradient(145deg,#312052,#0b1320);box-shadow:0 0 26px #8b5cf633}
+.category-heading{padding-top:20px}
+.category-panels{padding-bottom:6px;gap:12px}
+.category-panel{min-height:150px;border-color:#30364a;background:linear-gradient(145deg,#171c2b 0%,#0b0e17 78%);box-shadow:inset 0 1px #ffffff0b,0 10px 24px #0002}
+.category-panel:before{background:radial-gradient(circle at 100% 0%,var(--panel-glow,#8c4dff38),transparent 66%)}
+.category-panel.selected{border-color:var(--panel-accent,#a78bfa);box-shadow:0 0 0 1px #8b5cf633,0 14px 32px #0005,inset 0 1px #ffffff10}
+.panel-symbol{border-radius:14px;background:linear-gradient(145deg,#ffffff12,#ffffff03);box-shadow:0 8px 22px #0003}
+.panel-title{letter-spacing:.2px}
+.hero{border-color:#8b5cf655;box-shadow:0 24px 70px #0006,inset 0 1px #ffffff0c}
+.primary{background:linear-gradient(110deg,#a78bfa,#6d28d9);box-shadow:0 8px 28px #8b5cf644}
+.product{border-color:#2a3042;background:linear-gradient(145deg,#151a29,#0a0d15);box-shadow:inset 0 1px #ffffff08,0 10px 25px #0002}
+.product:active,.category-panel:active{transform:scale(.985)}
+.product .tag{background:#8b5cf61a;border-color:#8b5cf633}
+.bottomnav{background:#070911ed;border-top-color:#a78bfa22}
+.navitem.active{background:linear-gradient(180deg,#8b5cf62b,#8b5cf608);box-shadow:inset 0 0 0 1px #a78bfa30}
+@media(min-width:560px){.app{border-left:1px solid #ffffff06;border-right:1px solid #ffffff06;box-shadow:0 0 90px #0004}.category-panel{min-height:158px}}
+@media(prefers-reduced-motion:reduce){.hero:after{animation:none}}
 
-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 25px;
-}
-
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 11px;
-}
-
-.logo {
-  width: 48px;
-  height: 48px;
-  display: grid;
-  place-items: center;
-  border-radius: 16px;
-  background: linear-gradient(135deg, #a45bff, #ed65dc);
-  font-size: 25px;
-  box-shadow: 0 0 25px #a45bff44;
-}
-
-.brand h2 { margin: 0; font-size: 17px; }
-.brand p { margin: 2px 0 0; font-size: 11px; color: var(--muted); }
-
-.avatar {
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  background: #211b35;
-  border: 1px solid #493567;
-}
-
-.hero {
-  padding: 25px 21px;
-  border: 1px solid #a45bff55;
-  border-radius: 25px;
-  background: linear-gradient(130deg, #38205e, #171126 65%, #301536);
-  position: relative;
-  overflow: hidden;
-  margin-bottom: 25px;
-}
-
-.hero::after {
-  content: "✦";
-  position: absolute;
-  left: 18px;
-  top: 8px;
-  font-size: 100px;
-  color: #ffffff0c;
-}
-
-.tag {
-  display: inline-block;
-  padding: 5px 10px;
-  border-radius: 30px;
-  background: #ffffff12;
-  color: #e1caff;
-  font-size: 11px;
-}
-
-.hero h1 {
-  font-size: 27px;
-  line-height: 1.6;
-  margin: 12px 0 5px;
-}
-
-.hero p {
-  color: #c4bad9;
-  font-size: 13px;
-  line-height: 2;
-  margin: 0 0 17px;
-}
-
-.primary {
-  border: 0;
-  color: white;
-  padding: 11px 19px;
-  border-radius: 13px;
-  font-weight: 700;
-  background: linear-gradient(100deg, #8b4dff, #c04fe0);
-  box-shadow: 0 5px 22px #974dff30;
-}
-
-.section-head {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 23px 0 13px;
-}
-
-.section-head h3 { margin: 0; font-size: 17px; }
-.section-head span { font-size: 11px; color: var(--muted); }
-
-.categories {
-  display: flex;
-  gap: 9px;
-  overflow-x: auto;
-  padding-bottom: 7px;
-  scrollbar-width: none;
-}
-
-.category {
-  flex-shrink: 0;
-  padding: 10px 15px;
-  border-radius: 14px;
-  color: #c9c1d9;
-  border: 1px solid #ffffff12;
-  background: #171426;
-  font-size: 12px;
-}
-
-.category.active {
-  color: white;
-  background: #7843bc;
-  border-color: #b98aff;
-}
-
-.products {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px;
-}
-
-.product {
-  min-width: 0;
-  padding: 13px;
-  border-radius: 20px;
-  background: linear-gradient(145deg, #211a32, #12101e);
-  border: 1px solid #ffffff12;
-  box-shadow: 0 8px 25px #00000018;
-}
-
-.product-art {
-  height: 105px;
-  border-radius: 15px;
-  display: grid;
-  place-items: center;
-  font-size: 43px;
-  background:
-    radial-gradient(circle at 50% 40%, #a55aff55, transparent 65%),
-    #171126;
-  border: 1px solid #ffffff0b;
-  margin-bottom: 12px;
-}
-
-.product h4 { margin: 0 0 5px; font-size: 14px; }
-.product p {
-  margin: 0 0 13px;
-  color: var(--muted);
-  font-size: 11px;
-  min-height: 22px;
-}
-
-.product-bottom {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 5px;
-}
-
-.price { font-size: 12px; font-weight: 700; }
-.price small { color: #b7a8d5; font-weight: 400; }
-
-.buy {
-  border: 1px solid #a45bff70;
-  background: #8b4dff20;
-  color: #d9bcff;
-  border-radius: 10px;
-  padding: 7px 10px;
-  font-size: 11px;
-}
-
-.note {
-  margin-top: 20px;
-  padding: 13px;
-  border: 1px solid #ffffff12;
-  background: #ffffff05;
-  color: var(--muted);
-  border-radius: 15px;
-  font-size: 11px;
-  line-height: 2;
-}
-
-.bottom-nav {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 5;
-  display: flex;
-  justify-content: space-around;
-  padding: 12px 5px calc(12px + env(safe-area-inset-bottom));
-  background: #100d1bf2;
-  border-top: 1px solid #ffffff12;
-  backdrop-filter: blur(18px);
-}
-
-.nav-item {
-  color: #89819f;
-  border: 0;
-  background: none;
-  display: grid;
-  justify-items: center;
-  gap: 4px;
-  font-size: 10px;
-}
-
-.nav-item b { font-size: 20px; }
-.nav-item.active { color: #c99aff; }
-
-.empty {
-  grid-column: 1 / -1;
-  text-align: center;
-  padding: 35px 10px;
-  color: var(--muted);
-}
-
-@media (max-width: 350px) {
-  .product { padding: 9px; }
-  .hero h1 { font-size: 23px; }
-}
 </style>
 </head>
-
 <body>
-<div class="container">
+<div class="noise"></div>
+<div class="app">
+<header class="topbar">
+  <div class="brand"><div class="brandmark">ϟ</div><div><div class="brandname">AniStorm <span>SHOP</span></div><div class="brandtag">SHADOW X / SYSTEM ONLINE</div></div></div>
+  <div class="top-actions"><button class="iconbtn" id="searchJump" aria-label="جستجو">⌕</button><button class="iconbtn" id="profileJump" aria-label="پروفایل">♙</button></div>
+</header>
 
-  <header>
-    <div class="brand">
-      <div class="logo">⚡</div>
-      <div>
-        <h2>AniStorm Shop</h2>
-        <p>دنیای گیفت و استارز</p>
-      </div>
-    </div>
-    <div class="avatar">👤</div>
-  </header>
-
-  <section class="hero">
-    <span class="tag">✦ فروشگاه دیجیتال</span>
-    <h1>قدرت خریدت رو<br>آزاد کن!</h1>
-    <p>استارز، گیفت و آیتم‌های خاص تلگرام<br>همه در یک فروشگاه.</p>
-    <button class="primary" onclick="showProducts()">
-      مشاهده محصولات ←
+<section class="view active" id="view-home">
+  <div class="section-head category-heading"><div><h2>انتخاب سرویس</h2><p>دسترسی سریع به چهار بخش فروشگاه</p></div><span class="tag">QUICK ACCESS</span></div>
+  <div class="category-panels" id="categoryPanels">
+    <button class="category-panel selected" data-cat="uc" style="--panel-glow:#8c4dff38;--panel-accent:#c6a9ff">
+      <div class="panel-topline"><span class="panel-index">01 / GAME</span><span class="panel-symbol">UC</span></div>
+      <div class="panel-title">PUBG MOBILE</div><div class="panel-desc">بسته‌های یوسی و آیتم‌های بازی</div><div class="panel-foot"><span>ورود به پنل</span><span class="panel-arrow">←</span></div>
     </button>
-  </section>
-
-  <div class="section-head">
-    <h3>دسته‌بندی‌ها</h3>
-    <span>محصولات فروشگاه</span>
+    <button class="category-panel" data-cat="stars" style="--panel-glow:#ffcf7033;--panel-accent:#ffdc8a">
+      <div class="panel-topline"><span class="panel-index">02 / TELEGRAM</span><span class="panel-symbol">★</span></div>
+      <div class="panel-title">TELEGRAM STARS</div><div class="panel-desc">بسته‌های استارز تلگرام</div><div class="panel-foot"><span>ورود به پنل</span><span class="panel-arrow">←</span></div>
+    </button>
+    <button class="category-panel" data-cat="premium" style="--panel-glow:#5ef5ff2b;--panel-accent:#7af7ff">
+      <div class="panel-topline"><span class="panel-index">03 / MEMBERSHIP</span><span class="panel-symbol">✦</span></div>
+      <div class="panel-title">TELEGRAM PREMIUM</div><div class="panel-desc">اشتراک‌های پریمیوم</div><div class="panel-foot"><span>ورود به پنل</span><span class="panel-arrow">←</span></div>
+    </button>
+    <button class="category-panel" data-cat="vpn" style="--panel-glow:#63ffbd26;--panel-accent:#8affc8">
+      <div class="panel-topline"><span class="panel-index">04 / NETWORK</span><span class="panel-symbol">WG</span></div>
+      <div class="panel-title">VPN / WIREGUARD / DNS</div><div class="panel-desc">سرویس‌های اتصال و DNS</div><div class="panel-foot"><span>استعلام و سفارش</span><span class="panel-arrow">←</span></div>
+    </button>
   </div>
-
-  <div class="categories">
-    <button class="category active" data-cat="all">همه</button>
-    <button class="category" data-cat="stars">⭐ استارز</button>
-    <button class="category" data-cat="gifts">🎁 گیفت‌ها</button>
-    <button class="category" data-cat="nft">💎 کلکسیونی</button>
+  <div class="hero">
+    <div class="hero-grid"></div><div class="hero-hud" aria-hidden="true"><div class="hud-ring"></div><div class="hud-core">AS<span>×</span></div><i class="hud-line"></i><b class="hud-label">SYSTEM ONLINE</b></div>
+    <div class="hero-content"><div class="eyebrow">ANISTORM // DIGITAL ARENA</div><h1>LEVEL UP<br><em>YOUR GAME</em></h1><p>مرکز خرید دیجیتال گیمرها؛ یوسی، استارز، پریمیوم و سرویس‌های اتصال در یک پنل.</p><div class="hero-cta"><button class="primary" onclick="navigate('shop')">ورود به فروشگاه ↗</button><button class="secondary" onclick="navigate('arena')">Shadow Arena</button></div></div>
   </div>
+  <div class="hero-stats"><div class="stat"><b>04</b><span>پنل فروش</span></div><div class="stat"><b>24/7</b><span>ثبت درخواست</span></div><div class="stat"><b>SHADOW X</b><span>GAMING MARKET</span></div></div>
+  <div class="section-head"><div><h2>دسترسی سریع</h2><p>انتخاب کن و وارد شو</p></div><button class="mini-link" onclick="navigate('shop')">همه‌ی محصولات ←</button></div>
+  <div class="products" id="featuredProducts"></div>
+  <div class="promo"><div class="promo-icon">✦</div><div><strong>پیشنهاد ویژه‌ی Shadow</strong><p>قبل از ثبت سفارش، قیمت و موجودی نهایی توسط مدیر فروشگاه تأیید می‌شود.</p></div></div>
+  <div class="section-head"><div><h2>بروزرسانی آرنا</h2><p>پیشرفت کاراکترت رو دنبال کن</p></div><button class="mini-link" onclick="navigate('arena')">مشاهده ←</button></div>
+  <div class="panel"><div class="arena-head"><h3>⚔ SHADOW ARENA</h3><span class="live">● SYSTEM READY</span></div><div class="arena-card"><div class="arena-sigil">AS</div><div class="arena-info"><small>YOUR AWAKENING</small><h4>Shadow Initiate</h4><p>سطح ۰۷ · مسیر بیداری</p><div class="xp-row"><span>XP PROGRESS</span><span>680 / 1000</span></div><div class="xpbar"><i></i></div></div></div><div class="arena-actions"><button class="primary" onclick="navigate('arena')">ورود به آرنا</button><button class="ghostbtn" onclick="toast('سیستم مأموریت‌ها به‌زودی فعال می‌شود')">مأموریت‌ها</button></div></div>
+</section>
 
-  <div class="section-head" id="products">
-    <h3>محصولات ویژه</h3>
-    <span id="count">۶ محصول</span>
-  </div>
+<section class="view" id="view-shop">
+  <div class="section-head"><div><h2>بازار سایه</h2><p>چهار پنل اختصاصی؛ انتخاب کن و وارد بخش موردنظر شو</p></div><span class="tag">SHADOW MARKET</span></div>
 
-  <div class="products" id="product-list"></div>
+  <div class="searchrow"><label class="search"><span>⌕</span><input id="searchInput" placeholder="جستجوی بسته..." autocomplete="off"></label><button class="filter" id="sortBtn">قیمت ↑</button></div>
+  <div class="chips" id="chips"><button class="chip active" data-cat="all">همه</button><button class="chip" data-cat="uc">PUBG UC</button><button class="chip" data-cat="stars">Telegram Stars</button><button class="chip" data-cat="premium">Premium</button><button class="chip" data-cat="vpn">VPN / DNS</button><button class="chip" data-cat="featured">پیشنهادی</button></div>
+  <div class="products" id="allProducts"></div>
+  <div class="promo"><div class="promo-icon">⌁</div><div><strong>ثبت سفارش از داخل تلگرام</strong><p>این صفحه پرداخت آنلاین انجام نمی‌دهد؛ سفارش برای بررسی به ربات ارسال می‌شود.</p></div></div>
+</section>
 
-  <div class="note">
-    ✦ این نسخه نمایشی است. قیمت‌ها نمونه هستند و خرید واقعی
-    یا تحویل محصول هنوز فعال نشده است.
-  </div>
+<section class="view" id="view-arena">
+  <div class="section-head"><div><h2>Shadow Arena</h2><p>یک مسیر برای ارتقا؛ قدرت از همین‌جا شروع می‌شود</p></div><span class="tag">SEASON 01</span></div>
+  <div class="panel"><div class="arena-head"><h3>PROFILE // AWAKENING</h3><span class="live">● ACTIVE</span></div><div class="arena-card"><div class="arena-sigil">AS</div><div class="arena-info"><small>RANK: E — INITIATE</small><h4>Shadow Initiate</h4><p>آماده‌ی ورود به مسیر سایه</p><div class="xp-row"><span>XP PROGRESS</span><span>680 / 1000</span></div><div class="xpbar"><i></i></div></div></div><div class="profile-grid"><div class="profile-stat"><b>07</b><span>LEVEL</span></div><div class="profile-stat"><b>680</b><span>SHADOW XP</span></div><div class="profile-stat"><b>E</b><span>RANK</span></div></div></div>
+  <div class="section-head"><div><h2>کاراکترها</h2><p>کارت‌های نمایشی؛ قابلیت خرید فعلاً فعال نیست</p></div></div>
+  <div class="featured-chars"><div class="char"><div class="avatar">🌑</div><b>Nightborn</b><small>RANK E</small></div><div class="char"><div class="avatar">🗡️</div><b>Void Blade</b><small>RANK D</small></div><div class="char"><div class="avatar">👁️</div><b>Phantom</b><small>RANK C</small></div></div>
+  <div class="panel"><div class="arena-head"><h3>سیستم مأموریت</h3><span class="tag">COMING SOON</span></div><p style="font-size:11px;color:var(--muted);line-height:2;margin-bottom:0">مأموریت‌های روزانه، ارتقای سطح و ذخیره‌ی پیشرفت در نسخه‌ی بعدی به بک‌اند متصل می‌شوند.</p></div>
+</section>
 
+<section class="view" id="view-casino">
+  <div class="section-head"><div><h2>Shadow Lounge</h2><p>بخش سرگرمی و پاداش‌های نمایشی</p></div><span class="tag">LOUNGE</span></div>
+  <div class="casino-box"><div class="casino-top"><h3>✦ پاداش روزانه</h3><span class="coin">✧ ۰ سکه</span></div><div class="daily"><div class="daily-wheel">✦</div><div class="daily-text"><b>Daily Shadow Drop</b><p>این بخش در حال طراحی است؛ فعلاً هیچ سکه یا جایزه‌ی واقعی اعطا نمی‌شود.</p></div><button id="dailyBtn">بررسی</button></div><div class="casino-note">این بخش فعلاً نمایشی است و شامل شرط‌بندی، پرداخت یا جایزه‌ی نقدی نیست.</div></div>
+  <div class="panel"><div class="arena-head"><h3>فعالیت‌های آینده</h3><span class="tag">IN DEVELOPMENT</span></div><div class="featured-chars"><div class="char"><div class="avatar">🎯</div><b>Daily Quest</b><small>به‌زودی</small></div><div class="char"><div class="avatar">🎴</div><b>Card Drop</b><small>به‌زودی</small></div><div class="char"><div class="avatar">🏆</div><b>Rank Up</b><small>به‌زودی</small></div></div></div>
+</section>
+
+<section class="view" id="view-profile">
+  <div class="section-head"><div><h2>پروفایل پلیر</h2><p>اطلاعات نمایشی حساب</p></div><span class="tag">PLAYER HUB</span></div>
+  <div class="profile-card"><div class="profile-row"><div class="profile-avatar">♙</div><div><h3 id="profileName">Shadow Player</h3><p id="profileHandle">برای اطلاعات تلگرام، داخل مینی‌اپ باز کن</p></div></div><div class="profile-grid"><div class="profile-stat"><b>07</b><span>LEVEL</span></div><div class="profile-stat"><b>0</b><span>ORDERS*</span></div><div class="profile-stat"><b>—</b><span>WALLET</span></div></div><p style="font-size:9px;color:var(--muted);line-height:1.8;margin:13px 0 0">* سابقه‌ی سفارش و کیف پول واقعی پس از راه‌اندازی بک‌اند امن فعال می‌شود.</p></div>
+  <div class="panel"><div class="arena-head"><h3>تنظیمات</h3><span class="tag">LOCAL</span></div><div style="display:flex;justify-content:space-between;align-items:center;padding:13px 0;border-bottom:1px solid #ffffff0d;font-size:12px"><span>حالت نمایش</span><span style="color:var(--green)">Dark / Shadow</span></div><div style="display:flex;justify-content:space-between;align-items:center;padding:13px 0;font-size:12px"><span>وضعیت اتصال</span><span id="connectionStatus" style="color:var(--gold)">مرورگر</span></div><button class="ghostbtn" style="width:100%;margin-top:7px" onclick="toast('پشتیبانی: از طریق ربات AniStormی پیام بده')">پشتیبانی فروشگاه</button></div>
+</section>
 </div>
 
-<nav class="bottom-nav">
-  <button class="nav-item active" onclick="navTo('home',this)">
-    <b>⌂</b>خانه
-  </button>
-  <button class="nav-item" onclick="navTo('products',this)">
-    <b>▦</b>محصولات
-  </button>
-  <button class="nav-item" onclick="demo('سفارش‌های من')">
-    <b>▤</b>سفارش‌ها
-  </button>
-  <button class="nav-item" onclick="demo('پروفایل')">
-    <b>♙</b>پروفایل
-  </button>
-</nav>
+<nav class="bottomnav"><div class="navinner">
+<button class="navitem" data-view="casino"><span class="navicon">✧</span><span>کازینو</span></button>
+<button class="navitem" data-view="arena"><span class="navicon">AS</span><span>Shadow</span></button>
+<button class="navitem active" data-view="home"><span class="navicon">⌂</span><span>خانه</span></button>
+<button class="navitem" data-view="shop"><span class="navicon">▣</span><span>فروشگاه</span></button>
+</div></nav>
+
+<div class="toast" id="toast"></div>
+<div class="modal" id="orderModal"><div class="modalbox">
+  <div class="modalhead"><h3>ثبت سفارش <span style="color:var(--violet2)">//</span></h3><button class="close" id="closeModal">✕</button></div>
+  <p class="modal-desc">اطلاعات رو دقیق وارد کن. سفارش برای بررسی به ربات تلگرام ارسال می‌شه؛ پرداخت در این صفحه انجام نمی‌شه.</p>
+  <div class="summary">بسته: <strong id="chosenPackage">—</strong><br>مبلغ اعلامی: <strong id="chosenPrice">—</strong></div>
+  <form id="orderForm">
+    <div id="playerIdWrap"><label class="fieldlabel" for="playerId">آیدی پلیر (Player ID)</label><input class="field" id="playerId" inputmode="numeric" autocomplete="off" maxlength="30" placeholder="آیدی عددی پابجی" required></div>
+    <label class="fieldlabel" for="contact">راه ارتباطی</label><input class="field" id="contact" autocomplete="off" maxlength="100" placeholder="@username" required>
+    <div class="err" id="formError"></div>
+    <div class="modalbuttons"><button class="primary" type="submit" id="submitBtn">ارسال سفارش ↗</button><button class="ghostbtn" type="button" id="cancelBtn">انصراف</button></div>
+  </form>
+</div></div>
 
 <script>
-const products = [
-  {id:1, cat:"stars", icon:"⭐", name:"۱۰۰ استارز", desc:"پکیج استارز تلگرام", price:"نمونه"},
-  {id:2, cat:"stars", icon:"🌟", name:"۵۰۰ استارز", desc:"پکیج استارز تلگرام", price:"نمونه"},
-  {id:3, cat:"gifts", icon:"🎁", name:"گیفت تلگرام", desc:"هدیه دیجیتال", price:"نمونه"},
-  {id:4, cat:"gifts", icon:"🌹", name:"گیفت رز", desc:"گیفت تلگرامی", price:"نمونه"},
-  {id:5, cat:"nft", icon:"💎", name:"گیفت کلکسیونی", desc:"Collectible Gift", price:"نمونه"},
-  {id:6, cat:"nft", icon:"🎨", name:"آیتم ویژه", desc:"آیتم دیجیتال", price:"نمونه"}
+const products=[
+/* محصولات دیجیتال */
+{name:"60 UC",price:270000,tag:"STARTER",note:"بسته اقتصادی",emoji:"UC",glow:"#8c4dff",category:"uc",game:"PUBG Mobile"},
+{name:"120 UC",price:540000,tag:"POPULAR",note:"برای شروع",emoji:"UC",glow:"#5ef5ff",category:"uc",game:"PUBG Mobile"},
+{name:"180 UC",price:800000,tag:"VALUE",note:"بسته‌ی سبک",emoji:"UC",glow:"#5e9dff",category:"uc",game:"PUBG Mobile"},
+{name:"325 UC",price:1400000,tag:"BOOST",note:"ارتقای سریع",emoji:"UC",glow:"#a76cff",category:"uc",game:"PUBG Mobile"},
+{name:"385 UC",price:1650000,tag:"VALUE",note:"انتخاب پلیرها",emoji:"UC",glow:"#5ef5ff",category:"uc",game:"PUBG Mobile"},
+{name:"660 UC",price:2750000,tag:"POPULAR",note:"بسته‌ی پرطرفدار",emoji:"UC",glow:"#ff4fc8",category:"uc",game:"PUBG Mobile"},
+{name:"720 UC",price:3000000,tag:"BOOST",note:"برای ارتقا",emoji:"UC",glow:"#a76cff",category:"uc",game:"PUBG Mobile"},
+{name:"1045 UC",price:4400000,tag:"ELITE",note:"بسته‌ی ویژه",emoji:"UC",glow:"#ffcf70",category:"uc",game:"PUBG Mobile"},
+{name:"1310 UC",price:5500000,tag:"ELITE",note:"سطح بالاتر",emoji:"UC",glow:"#ff4fc8",category:"uc",game:"PUBG Mobile"},
+{name:"1800 UC",price:7500000,tag:"MAX",note:"بسته‌ی بزرگ",emoji:"UC",glow:"#ffcf70",category:"uc",game:"PUBG Mobile"},
+/* Telegram Stars — linear estimate based on 50 Stars = 255,000 toman */
+{name:"50 Stars",price:255000,tag:"TELEGRAM",note:"۵۰ استارز تلگرام",emoji:"STAR",glow:"#ffcf70",category:"stars",game:"Telegram Stars"},
+{name:"100 Stars",price:510000,tag:"TELEGRAM",note:"۱۰۰ استارز تلگرام",emoji:"STAR",glow:"#ffcf70",category:"stars",game:"Telegram Stars"},
+{name:"250 Stars",price:1275000,tag:"POPULAR",note:"۲۵۰ استارز تلگرام",emoji:"STAR",glow:"#ffcf70",category:"stars",game:"Telegram Stars"},
+{name:"500 Stars",price:2550000,tag:"VALUE",note:"۵۰۰ استارز تلگرام",emoji:"STAR",glow:"#ffcf70",category:"stars",game:"Telegram Stars"},
+{name:"1000 Stars",price:5100000,tag:"ELITE",note:"۱۰۰۰ استارز تلگرام",emoji:"VIP",glow:"#ffcf70",category:"stars",game:"Telegram Stars"},
+{name:"2500 Stars",price:12750000,tag:"ULTRA",note:"۲۵۰۰ استارز تلگرام",emoji:"STAR",glow:"#ffcf70",category:"stars",game:"Telegram Stars"},
+{name:"5000 Stars",price:25500000,tag:"MAX",note:"۵۰۰۰ استارز تلگرام",emoji:"STAR",glow:"#ffcf70",category:"stars",game:"Telegram Stars"},
+/* Telegram Premium */
+{name:"Premium 3 ماهه",price:3490000,tag:"PREMIUM",note:"اشتراک ۳ ماهه تلگرام",emoji:"VIP",glow:"#5ef5ff",category:"premium",game:"Telegram Premium"},
+{name:"Premium 6 ماهه",price:4600000,tag:"PREMIUM",note:"اشتراک ۶ ماهه تلگرام",emoji:"VIP",glow:"#5ef5ff",category:"premium",game:"Telegram Premium"},
+{name:"Premium 12 ماهه",price:8300000,tag:"ELITE",note:"اشتراک ۱۲ ماهه تلگرام",emoji:"PREM",glow:"#5ef5ff",category:"premium",game:"Telegram Premium"},
+{name:"WireGuard — 1 ماهه",price:null,tag:"WIREGUARD",note:"اشتراک یک‌ماهه · قیمت با استعلام",emoji:"WG",glow:"#7dffbd",category:"vpn",game:"WireGuard VPN"},
+{name:"WireGuard — 3 ماهه",price:null,tag:"WIREGUARD",note:"اشتراک سه‌ماهه · قیمت با استعلام",emoji:"WG+",glow:"#5ef5ff",category:"vpn",game:"WireGuard VPN"},
+{name:"VPN — 1 ماهه",price:null,tag:"VPN",note:"پلن یک‌ماهه · قیمت با استعلام",emoji:"VPN",glow:"#8c4dff",category:"vpn",game:"VPN"},
+{name:"DNS اختصاصی",price:null,tag:"DNS",note:"سرویس DNS · قیمت با استعلام",emoji:"DNS",glow:"#5ef5ff",category:"vpn",game:"DNS"}
 ];
+let selectedProduct=null,ascending=true,activeCategory="all",query="";
+const $=id=>document.getElementById(id);
+function price(n){return n==null?"استعلام قیمت":new Intl.NumberFormat("fa-IR").format(n)+" تومان"}
+function card(p,i){return `<article class="product" style="--glow:${p.glow}"><div class="product-top"><span class="tag">${p.tag}</span><button class="heart" aria-label="علاقه‌مندی" onclick="this.classList.toggle('on');this.textContent=this.classList.contains('on')?'♥':'♡'">♡</button></div><div class="product-art"><div class="art-ring"></div><div class="crystal">${p.emoji}</div></div><h3>${p.name}</h3><div class="meta">${p.note}</div><div class="product-bottom"><div class="price">${price(p.price)}</div><button class="buymini" aria-label="خرید ${p.name}" onclick="openOrder(${products.indexOf(p)})">＋</button></div></article>`}
+function render(){let list=products.filter(p=>(activeCategory==="all"||p.category===activeCategory||(activeCategory==="featured"&&["120 UC","660 UC","50 Stars","500 Stars","Premium 3 ماهه"].includes(p.name)))&&p.name.toLowerCase().includes(query.toLowerCase()));list.sort((a,b)=>{if(a.price==null&&b.price==null)return a.name.localeCompare(b.name);if(a.price==null)return 1;if(b.price==null)return -1;return ascending?a.price-b.price:b.price-a.price});$("allProducts").innerHTML=list.length?list.map(card).join(""):'<div class="empty">محصولی با این مشخصات پیدا نشد.</div>';const featured=products.filter(p=>["120 UC","660 UC","50 Stars","Premium 3 ماهه"].includes(p.name));$("featuredProducts").innerHTML=featured.map(card).join("")}
+function navigate(view){document.querySelectorAll(".view").forEach(v=>v.classList.toggle("active",v.id==="view-"+view));document.querySelectorAll(".navitem").forEach(b=>b.classList.toggle("active",b.dataset.view===view));window.scrollTo({top:0,behavior:"smooth"});if(view==="shop")setTimeout(()=>$("searchInput").focus({preventScroll:true}),150)}
+function toast(message){const t=$("toast");t.textContent=message;t.classList.add("show");clearTimeout(window.__toastTimer);window.__toastTimer=setTimeout(()=>t.classList.remove("show"),2500)}
+function openOrder(i){selectedProduct=products[i];$("chosenPackage").textContent=selectedProduct.name;$("chosenPrice").textContent=price(selectedProduct.price);$("playerIdWrap").style.display=selectedProduct.category==="uc"?"block":"none";$("playerId").required=selectedProduct.category==="uc";$("formError").style.display="none";$("formError").textContent="";$("orderModal").classList.add("show");const tg=window.Telegram&&window.Telegram.WebApp;if(tg&&tg.HapticFeedback)tg.HapticFeedback.impactOccurred("light")}
+function closeOrder(){$("orderModal").classList.remove("show")}
+document.querySelectorAll(".navitem").forEach(b=>b.addEventListener("click",()=>navigate(b.dataset.view)));
+document.querySelectorAll(".chip").forEach(b=>b.addEventListener("click",()=>{document.querySelectorAll(".chip").forEach(c=>c.classList.toggle("active",c===b));activeCategory=b.dataset.cat;render()}));
 
-const list = document.getElementById("product-list");
-const count = document.getElementById("count");
-
-function render(cat="all") {
-  const items = cat === "all"
-    ? products
-    : products.filter(p => p.cat === cat);
-
-  count.textContent = items.length + " محصول";
-
-  if (!items.length) {
-    list.innerHTML = '<div class="empty">محصولی پیدا نشد.</div>';
-    return;
-  }
-
-  list.innerHTML = items.map(p => `
-    <article class="product">
-      <div class="product-art">${p.icon}</div>
-      <h4>${p.name}</h4>
-      <p>${p.desc}</p>
-      <div class="product-bottom">
-        <div class="price">${p.price}<br><small>قیمت نمایشی</small></div>
-        <button class="buy" onclick="buy(${p.id})">جزئیات</button>
-      </div>
-    </article>
-  `).join("");
-}
-
-document.querySelectorAll(".category").forEach(btn => {
-  btn.addEventListener("click", () => {
-    document.querySelectorAll(".category")
-      .forEach(b => b.classList.remove("active"));
-    btn.classList.add("active");
-    render(btn.dataset.cat);
-  });
-});
-
-function buy(id) {
-  const p = products.find(x => x.id === id);
-  alert("محصول: " + p.name +
-    "\nاین نسخه آزمایشی است؛ خرید هنوز فعال نیست.");
-}
-
-function showProducts() {
-  document.getElementById("products")
-    .scrollIntoView({behavior:"smooth"});
-}
-
-function navTo(where, btn) {
-  document.querySelectorAll(".nav-item")
-    .forEach(b => b.classList.remove("active"));
-  btn.classList.add("active");
-
-  if (where === "home") {
-    window.scrollTo({top:0, behavior:"smooth"});
-  } else {
-    showProducts();
-  }
-}
-
-function demo(name) {
-  alert(name + "\nاین بخش در نسخه بعدی فعال می‌شود.");
-}
-
+document.querySelectorAll(".category-panel").forEach(b=>b.addEventListener("click",()=>{
+  document.querySelectorAll(".category-panel").forEach(p=>p.classList.toggle("selected",p===b));
+  document.querySelectorAll(".chip").forEach(c=>c.classList.toggle("active",c.dataset.cat===b.dataset.cat));
+  activeCategory=b.dataset.cat;
+  render();
+  $("allProducts").scrollIntoView({behavior:"smooth",block:"start"});
+}));
+$("searchInput").addEventListener("input",e=>{query=e.target.value.trim();render()});
+$("sortBtn").addEventListener("click",()=>{ascending=!ascending;$("sortBtn").textContent=ascending?"قیمت ↑":"قیمت ↓";render()});
+$("searchJump").addEventListener("click",()=>{navigate("shop");setTimeout(()=>$("searchInput").focus(),100)});
+$("profileJump").addEventListener("click",()=>navigate("profile"));
+$("closeModal").addEventListener("click",closeOrder);$("cancelBtn").addEventListener("click",closeOrder);
+$("orderModal").addEventListener("click",e=>{if(e.target===$("orderModal"))closeOrder()});
+$("dailyBtn").addEventListener("click",()=>toast("پاداش روزانه هنوز فعال نشده است"));
+$("orderForm").addEventListener("submit",e=>{e.preventDefault();if(!selectedProduct)return;const playerId=$("playerId").value.trim(),contact=$("contact").value.trim();if(selectedProduct.category==="uc"&&!/^[0-9]{5,30}$/.test(playerId)){showError("آیدی پلیر باید فقط عدد و حداقل ۵ رقم باشه.");return}if(contact.length<3){showError("لطفاً راه ارتباطی معتبر وارد کن.");return}
+const needsPlayerId=selectedProduct.category==="uc";
+const order={type:"anistorm_order",product:selectedProduct.game,price:price(selectedProduct.price),game:selectedProduct.game,package:selectedProduct.name,details:"محصول: "+selectedProduct.name+"\n"+(needsPlayerId?"Player ID: "+playerId+"\n":"")+"مبلغ اعلامی: "+price(selectedProduct.price)+(selectedProduct.price==null?" (استعلام قیمت لازم است)":"") ,contact};
+const tg=window.Telegram&&window.Telegram.WebApp;
+if(tg&&tg.initData){try{tg.ready();tg.sendData(JSON.stringify(order));$("submitBtn").disabled=true;$("submitBtn").textContent="در حال ارسال...";toast("درخواست ارسال شد؛ منتظر پیام ربات باش");}catch(err){showError("ارسال انجام نشد؛ دوباره تلاش کن.");$("submitBtn").disabled=false;$("submitBtn").textContent="ارسال سفارش ↗"}return}
+showError("برای ارسال سفارش، سایت رو از دکمه‌ی داخل ربات تلگرام باز کن.")});
+function showError(m){$("formError").textContent=m;$("formError").style.display="block"}
+const tg=window.Telegram&&window.Telegram.WebApp;if(tg){tg.ready();tg.expand();if(tg.initDataUnsafe&&tg.initDataUnsafe.user){const u=tg.initDataUnsafe.user;$("profileName").textContent=[u.first_name,u.last_name].filter(Boolean).join(" ")||"Shadow Player";$("profileHandle").textContent=u.username?"@"+u.username:"حساب تلگرام متصل";$("connectionStatus").textContent="Telegram Mini App";$("connectionStatus").style.color="var(--green)"}}
 render();
 </script>
 </body>
