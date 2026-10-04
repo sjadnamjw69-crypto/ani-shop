@@ -2,924 +2,145 @@
 <html lang="fa" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-<meta name="theme-color" content="#080711">
-<meta name="description" content="NEXO Digital Store">
-<title>NEXO</title>
-
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0a0812">
+<title>NEXO | فروشگاه</title>
 <script src="https://telegram.org/js/telegram-web-app.js"></script>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap');
-
 :root{
-  --bg:#080711;
-  --card:#131020;
-  --card2:#19152a;
-  --border:#29233d;
-  --purple:#8b5cf6;
-  --purple2:#a855f7;
-  --pink:#ec4899;
-  --text:#fff;
-  --muted:#9891aa;
-  --green:#35d07f;
-  --gold:#ffc857;
-  --red:#ff5577;
+--bg:#090711;--card:#15111f;--card2:#1c1628;--line:#2b2338;
+--purple:#9b5cff;--pink:#ed65dc;--text:#faf7ff;--muted:#aaa1b9;
+--green:#53e29b;--gold:#ffd45a;--danger:#ff657a
 }
-
-*{
-  box-sizing:border-box;
-  -webkit-tap-highlight-color:transparent;
-}
-
-html,body{
-  margin:0;
-  padding:0;
-  min-height:100%;
-  background:var(--bg);
-  color:var(--text);
-  font-family:Vazirmatn,Arial,sans-serif;
-}
-
+*{box-sizing:border-box}
 body{
-  padding-bottom:90px;
-  overflow-x:hidden;
+margin:0;
+background:radial-gradient(circle at 50% -10%,#27143d 0,#090711 45%);
+color:var(--text);
+font-family:Tahoma,Arial,sans-serif;
+min-height:100vh
 }
-
-button,input{
-  font-family:inherit;
+button,input{font:inherit}
+button{border:0;cursor:pointer}
+.app{max-width:760px;margin:auto;padding-bottom:92px}
+header{
+padding:18px 16px 10px;
+display:flex;
+align-items:center;
+justify-content:space-between
 }
-
-button{
-  border:0;
-  cursor:pointer;
-}
-
-.app{
-  width:100%;
-  max-width:620px;
-  margin:auto;
-  padding:14px;
-}
-
-/* HEADER */
-
-.top{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:10px;
-  margin-bottom:16px;
-}
-
 .logo{
-  display:flex;
-  align-items:center;
-  gap:10px;
+font-size:28px;
+font-weight:900;
+letter-spacing:2px;
+background:linear-gradient(90deg,#fff,var(--purple),var(--pink));
+-webkit-background-clip:text;
+color:transparent
 }
-
-.logoIcon{
-  width:45px;
-  height:45px;
-  border-radius:14px;
-  display:grid;
-  place-items:center;
-  font-size:22px;
-  font-weight:900;
-  background:linear-gradient(135deg,var(--purple),var(--pink));
-  box-shadow:0 8px 25px rgba(139,92,246,.3);
-}
-
-.logoText{
-  font-size:20px;
-  font-weight:900;
-  letter-spacing:1px;
-}
-
-.logoSub{
-  color:var(--muted);
-  font-size:9px;
-}
-
-.iconBtn{
-  width:42px;
-  height:42px;
-  border-radius:13px;
-  color:#fff;
-  background:var(--card);
-  border:1px solid var(--border);
-  font-size:18px;
-}
-
-/* VIEWS */
-
-.view{
-  display:none;
-}
-
-.view.active{
-  display:block;
-}
-
-/* HERO */
-
-.hero{
-  position:relative;
-  overflow:hidden;
-  min-height:190px;
-  border-radius:24px;
-  padding:22px;
-  margin-bottom:16px;
-  background:
-    radial-gradient(circle at 90% 10%,rgba(168,85,247,.38),transparent 35%),
-    radial-gradient(circle at 10% 100%,rgba(236,72,153,.20),transparent 40%),
-    linear-gradient(135deg,#19122c,#0e0b18);
-  border:1px solid #30274a;
-}
-
-.hero:after{
-  content:"NEXO";
-  position:absolute;
-  left:-10px;
-  bottom:-28px;
-  font-size:100px;
-  font-weight:900;
-  color:rgba(255,255,255,.025);
-}
-
-.heroBadge{
-  display:inline-flex;
-  padding:6px 10px;
-  border-radius:20px;
-  background:rgba(139,92,246,.14);
-  color:#cbbcff;
-  border:1px solid rgba(139,92,246,.25);
-  font-size:10px;
-  margin-bottom:10px;
-}
-
-.hero h1{
-  position:relative;
-  z-index:1;
-  margin:0;
-  font-size:28px;
-}
-
-.hero p{
-  position:relative;
-  z-index:1;
-  color:var(--muted);
-  font-size:12px;
-  margin:7px 0 17px;
-}
-
-.heroBtn{
-  position:relative;
-  z-index:2;
-  padding:12px 18px;
-  border-radius:13px;
-  color:#fff;
-  font-weight:800;
-  background:linear-gradient(135deg,var(--purple),var(--pink));
-}
-
-/* SECTION */
-
-.sectionTitle{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  margin:20px 2px 11px;
-}
-
-.sectionTitle h2{
-  margin:0;
-  font-size:16px;
-}
-
-.sectionTitle span{
-  color:var(--muted);
-  font-size:10px;
-}
-
-/* SEARCH */
-
-.search{
-  display:flex;
-  align-items:center;
-  gap:8px;
-  height:48px;
-  padding:0 13px;
-  margin-bottom:14px;
-  border-radius:15px;
-  background:var(--card);
-  border:1px solid var(--border);
-}
-
-.search input{
-  width:100%;
-  border:0;
-  outline:0;
-  background:transparent;
-  color:#fff;
-  font-size:13px;
-}
-
-.search input::placeholder{
-  color:#6f687f;
-}
-
-/* CATEGORIES */
-
-.categories{
-  display:flex;
-  gap:8px;
-  overflow-x:auto;
-  padding-bottom:5px;
-  scrollbar-width:none;
-}
-
-.categories::-webkit-scrollbar{
-  display:none;
-}
-
-.cat{
-  white-space:nowrap;
-  padding:9px 13px;
-  border-radius:12px;
-  color:#aaa3bb;
-  background:var(--card);
-  border:1px solid var(--border);
-  font-size:10px;
-}
-
-.cat.active{
-  color:#fff;
-  border-color:var(--purple);
-  background:rgba(139,92,246,.17);
-}
-
-/* PRODUCTS */
-
-.products{
-  display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:10px;
-}
-
-.product{
-  min-width:0;
-  padding:12px;
-  border-radius:18px;
-  background:linear-gradient(180deg,var(--card2),var(--card));
-  border:1px solid var(--border);
-}
-
-.productIcon{
-  height:88px;
-  display:grid;
-  place-items:center;
-  margin-bottom:10px;
-  border-radius:14px;
-  font-size:40px;
-  background:
-    radial-gradient(circle,rgba(139,92,246,.3),transparent 55%),
-    #0d0a17;
-  border:1px solid #27203b;
-}
-
-.productTitle{
-  font-size:13px;
-  font-weight:800;
-  margin-bottom:4px;
-}
-
-.productDesc{
-  color:var(--muted);
-  font-size:9px;
-  min-height:17px;
-}
-
-.productBottom{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:5px;
-  margin-top:11px;
-}
-
-.price{
-  font-size:11px;
-  font-weight:800;
-}
-
-.price small{
-  color:var(--muted);
-  font-size:8px;
-}
-
-.buy{
-  padding:8px 10px;
-  border-radius:10px;
-  color:#d8caff;
-  background:rgba(139,92,246,.18);
-  border:1px solid rgba(139,92,246,.28);
-  font-size:10px;
-  font-weight:800;
-}
-
-/* QUICK CARDS */
-
-.quickGrid{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:10px;
-}
-
-.quick{
-  padding:15px;
-  text-align:right;
-  border-radius:18px;
-  color:#fff;
-  background:var(--card);
-  border:1px solid var(--border);
-}
-
-.quickIcon{
-  font-size:27px;
-  margin-bottom:7px;
-}
-
-.quickTitle{
-  font-size:12px;
-  font-weight:800;
-}
-
-.quickText{
-  color:var(--muted);
-  font-size:9px;
-  margin-top:3px;
-}
-
-/* WALLET */
-
-.wallet{
-  padding:20px;
-  border-radius:23px;
-  background:
-    radial-gradient(circle at 90% 10%,rgba(236,72,153,.3),transparent 35%),
-    linear-gradient(135deg,#19132d,#0f0c19);
-  border:1px solid #33264e;
-}
-
-.walletLabel{
-  color:#aaa2ba;
-  font-size:11px;
-}
-
-.walletBalance{
-  margin:7px 0 3px;
-  font-size:31px;
-  font-weight:900;
-}
-
-.walletUnit{
-  color:#9c91b2;
-  font-size:10px;
-}
-
-.walletActions{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:8px;
-  margin-top:17px;
-}
-
-.walletActions button{
-  padding:12px;
-  border-radius:13px;
-  color:#fff;
-  background:rgba(255,255,255,.06);
-  border:1px solid rgba(255,255,255,.09);
-  font-size:11px;
-  font-weight:800;
-}
-
-/* CASINO */
-
-.casinoHero{
-  padding:20px;
-  border-radius:23px;
-  background:
-    radial-gradient(circle at 90% 20%,rgba(255,200,87,.25),transparent 35%),
-    linear-gradient(135deg,#21172d,#0f0b18);
-  border:1px solid #49334a;
-  text-align:center;
-}
-
-.casinoEmoji{
-  font-size:55px;
-}
-
-.casinoHero h2{
-  margin:5px 0;
-  font-size:22px;
-}
-
-.casinoHero p{
-  color:var(--muted);
-  font-size:11px;
-}
-
-.casinoGrid{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:10px;
-  margin-top:12px;
-}
-
-.game{
-  padding:20px 12px;
-  text-align:center;
-  border-radius:18px;
-  background:var(--card);
-  border:1px solid var(--border);
-}
-
-.gameIcon{
-  font-size:38px;
-}
-
-.game b{
-  display:block;
-  margin-top:7px;
-  font-size:12px;
-}
-
-.game span{
-  display:block;
-  color:var(--muted);
-  font-size:9px;
-  margin-top:3px;
-}
-
-/* PROFILE */
-
-.profile{
-  padding:18px;
-  border-radius:21px;
-  background:var(--card);
-  border:1px solid var(--border);
-}
-
-.profileHead{
-  display:flex;
-  align-items:center;
-  gap:13px;
-}
-
-.avatar{
-  width:58px;
-  height:58px;
-  display:grid;
-  place-items:center;
-  border-radius:18px;
-  background:linear-gradient(135deg,var(--purple),var(--pink));
-  font-size:24px;
-  font-weight:900;
-}
-
-.profileName{
-  font-size:16px;
-  font-weight:900;
-}
-
-.profileUsername{
-  color:var(--muted);
-  font-size:10px;
-  direction:ltr;
-}
-
 .status{
-  display:flex;
-  align-items:center;
-  gap:5px;
-  color:var(--green);
-  font-size:9px;
-  margin-top:4px;
+font-size:12px;
+color:var(--green);
+background:#10261d;
+padding:7px 10px;
+border-radius:99px
 }
-
-.status i{
-  width:6px;
-  height:6px;
-  border-radius:50%;
-  background:var(--green);
+.view{display:none;padding:8px 14px 18px}
+.view.active{display:block}
+.hero{
+background:linear-gradient(135deg,#1b1230,#24152d);
+border:1px solid #3b2852;
+border-radius:24px;
+padding:22px;
+margin:4px 0 18px;
+position:relative;
+overflow:hidden
 }
-
-/* ORDERS */
-
-.order{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  padding:12px;
-  margin-bottom:8px;
-  border-radius:16px;
-  background:var(--card);
-  border:1px solid var(--border);
+.hero:after{
+content:"";
+position:absolute;
+width:150px;
+height:150px;
+border-radius:50%;
+background:#9b5cff22;
+left:-45px;
+top:-55px;
+filter:blur(5px)
 }
-
-.orderIcon{
-  width:44px;
-  height:44px;
-  display:grid;
-  place-items:center;
-  border-radius:13px;
-  background:#0e0b18;
-  font-size:22px;
+.hero h1{margin:0 0 8px;font-size:25px}
+.hero p{margin:0;color:var(--muted);line-height:1.8}
+.grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:11px
 }
-
-.orderInfo{
-  flex:1;
-  min-width:0;
+.quick,.product,.walletbox,.profilebox,.order,.casino-card{
+background:var(--card);
+border:1px solid var(--line);
+border-radius:18px
 }
-
-.orderName{
-  font-size:12px;
-  font-weight:800;
+.quick{
+padding:16px;
+text-align:right;
+min-height:92px
 }
-
-.orderDate{
-  color:var(--muted);
-  font-size:8px;
-  margin-top:3px;
+.quick b{display:block;font-size:15px;margin-bottom:7px}
+.quick span{font-size:12px;color:var(--muted)}
+.section-title{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin:22px 2px 12px
 }
-
-.orderStatus{
-  padding:5px 8px;
-  border-radius:8px;
-  color:#b9ffd9;
-  background:rgba(53,208,127,.1);
-  font-size:8px;
+.section-title h2{font-size:18px;margin:0}
+.section-title span{font-size:12px;color:var(--muted)}
+.products{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:12px
 }
-
-/* EMPTY */
-
-.empty{
-  padding:45px 20px;
-  text-align:center;
-  color:var(--muted);
+.product{padding:14px}
+.icon{font-size:30px;margin-bottom:9px}
+.product h3{font-size:14px;margin:0 0 7px}
+.price{color:var(--gold);font-weight:800;font-size:13px}
+.buy{
+width:100%;
+margin-top:12px;
+padding:11px;
+border-radius:12px;
+background:linear-gradient(90deg,var(--purple),var(--pink));
+color:white;
+font-weight:800
 }
-
-.emptyIcon{
-  font-size:42px;
-  margin-bottom:8px;
+.search{
+width:100%;
+padding:13px 15px;
+background:#120e19;
+color:white;
+border:1px solid var(--line);
+border-radius:14px;
+outline:none;
+margin-bottom:12px
 }
-
-/* BOTTOM NAV */
-
-.bottomNav{
-  position:fixed;
-  z-index:50;
-  left:50%;
-  bottom:10px;
-  transform:translateX(-50%);
-  width:min(620px,calc(100% - 20px));
-  display:grid;
-  grid-template-columns:repeat(5,1fr);
-  gap:4px;
-  padding:7px;
-  border-radius:20px;
-  background:rgba(16,13,27,.95);
-  border:1px solid #2b2540;
-  backdrop-filter:blur(15px);
+.chips{
+display:flex;
+gap:8px;
+overflow:auto;
+padding-bottom:5px
 }
-
-.navBtn{
-  min-height:55px;
-  border-radius:15px;
-  color:#858093;
-  background:transparent;
-  font-size:9px;
+.chip{
+white-space:nowrap;
+padding:9px 13px;
+border-radius:99px;
+background:var(--card);
+border:1px solid var(--line);
+color:var(--muted)
 }
-
-.navIcon{
-  display:block;
-  font-size:20px;
-  margin-bottom:3px;
+.chip.active{
+background:#38204d;
+color:white;
+border-color:var(--purple)
 }
-
-.navBtn.active{
-  color:#fff;
-  background:rgba(139,92,246,.18);
-}
-
-/* MODAL */
-
-.modal{
-  position:fixed;
-  inset:0;
-  z-index:100;
-  display:none;
-  align-items:flex-end;
-  justify-content:center;
-  background:rgba(0,0,0,.72);
-  backdrop-filter:blur(5px);
-}
-
-.modal.show{
-  display:flex;
-}
-
-.modalBox{
-  width:min(620px,100%);
-  max-height:88vh;
-  overflow:auto;
-  padding:18px;
-  border-radius:25px 25px 0 0;
-  background:#11101b;
-  border:1px solid #302a43;
-}
-
-.modalHead{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  margin-bottom:15px;
-}
-
-.modalHead h3{
-  margin:0;
-  font-size:17px;
-}
-
-.close{
-  width:38px;
-  height:38px;
-  border-radius:12px;
-  color:#fff;
-  background:#211d2d;
-  font-size:18px;
-}
-
-.formInput{
-  width:100%;
-  padding:13px;
-  margin-bottom:9px;
-  border-radius:12px;
-  outline:0;
-  color:#fff;
-  background:#191625;
-  border:1px solid #302a43;
-}
-
-.confirm{
-  width:100%;
-  padding:13px;
-  border-radius:13px;
-  color:#fff;
-  font-weight:800;
-  background:linear-gradient(135deg,var(--purple),var(--pink));
-}
-
-/* TOAST */
-
-.toast{
-  position:fixed;
-  z-index:200;
-  left:50%;
-  bottom:85px;
-  transform:translateX(-50%) translateY(20px);
-  width:max-content;
-  max-width:90%;
-  padding:11px 16px;
-  border-radius:13px;
-  color:#fff;
-  background:#211c30;
-  border:1px solid #3a3150;
-  opacity:0;
-  pointer-events:none;
-  transition:.25s;
-  font-size:11px;
-}
-
-.toast.show{
-  opacity:1;
-  transform:translateX(-50%) translateY(0);
-}
-
-/* MOBILE */
-
-@media(max-width:380px){
-  .products{
-    gap:7px;
-  }
-
-  .product{
-    padding:9px;
-  }
-
-  .productIcon{
-    height:78px;
-  }
-
-  .hero h1{
-    font-size:24px;
-  }
-}
-</style>
-</head>
-
-<body>
-
-<div class="app">
-
-  <!-- HEADER -->
-  <header class="top">
-    <div class="logo">
-      <div class="logoIcon">N</div>
-      <div>
-        <div class="logoText">NEXO</div>
-        <div class="logoSub">DIGITAL STORE</div>
-      </div>
-    </div>
-
-    <div class="topActions">
-      <button class="iconBtn" id="notifyBtn">🔔</button>
-    </div>
-  </header>
-
-
-  <!-- HOME -->
-  <main id="home" class="view active">
-
-    <section class="hero">
-      <div class="heroBadge">⚡ فروشگاه دیجیتال NEXO</div>
-
-      <h1>خوش اومدی به NEXO</h1>
-
-      <p>
-        استارز، گیفت، پریمیوم، پابجی و محصولات دیجیتال
-      </p>
-
-      <button class="heroBtn" onclick="go('shop')">
-        🛍️ مشاهده فروشگاه
-      </button>
-    </section>
-
-
-    <div class="sectionTitle">
-      <h2>دسترسی سریع</h2>
-      <span>NEXO</span>
-    </div>
-
-    <section class="quickGrid">
-
-      <button class="quick" onclick="go('shop')">
-        <div class="quickIcon">🛍️</div>
-        <div class="quickTitle">فروشگاه</div>
-        <div class="quickText">مشاهده محصولات</div>
-      </button>
-
-      <button class="quick" onclick="go('wallet')">
-        <div class="quickIcon">💰</div>
-        <div class="quickTitle">کیف پول</div>
-        <div class="quickText">موجودی و شارژ</div>
-      </button>
-
-      <button class="quick" onclick="go('casino')">
-        <div class="quickIcon">🎰</div>
-        <div class="quickTitle">کازینو</div>
-        <div class="quickText">بازی با پول مجازی</div>
-      </button>
-
-      <button class="quick" onclick="go('orders')">
-        <div class="quickIcon">📦</div>
-        <div class="quickTitle">سفارش‌ها</div>
-        <div class="quickText">پیگیری سفارش‌ها</div>
-      </button>
-
-    </section>
-
-
-    <div class="sectionTitle">
-      <h2>محصولات محبوب</h2>
-      <span>جدیدترین‌ها</span>
-    </div>
-
-    <section class="products">
-
-      <article class="product">
-        <div class="productIcon">⭐</div>
-        <div class="productTitle">Telegram Stars</div>
-        <div class="productDesc">خرید استارز تلگرام</div>
-
-        <div class="productBottom">
-          <div class="price">از 10 <small>Stars</small></div>
-          <button class="buy" onclick="buy('Telegram Stars')">خرید</button>
-        </div>
-      </article>
-
-      <article class="product">
-        <div class="productIcon">🎁</div>
-        <div class="productTitle">گیفت تلگرام</div>
-        <div class="productDesc">گیفت‌های خاص تلگرام</div>
-
-        <div class="productBottom">
-          <div class="price">ویژه</div>
-          <button class="buy" onclick="buy('گیفت تلگرام')">خرید</button>
-        </div>
-      </article>
-
-      <article class="product">
-        <div class="productIcon">💎</div>
-        <div class="productTitle">Telegram Premium</div>
-        <div class="productDesc">پریمیوم تلگرام</div>
-
-        <div class="productBottom">
-          <div class="price">ویژه</div>
-          <button class="buy" onclick="buy('Telegram Premium')">خرید</button>
-        </div>
-      </article>
-
-      <article class="product">
-        <div class="productIcon">🎮</div>
-        <div class="productTitle">PUBG UC</div>
-        <div class="productDesc">شارژ UC پابجی</div>
-
-        <div class="productBottom">
-          <div class="price">ویژه</div>
-          <button class="buy" onclick="buy('PUBG UC')">خرید</button>
-        </div>
-      </article>
-
-    </section>
-
-  </main>
-
-
-  <!-- SHOP -->
-  <main id="shop" class="view">
-
-    <div class="sectionTitle">
-      <h2>🛍️ فروشگاه NEXO</h2>
-      <span>محصولات</span>
-    </div>
-
-    <div class="search">
-      🔎
-      <input id="searchInput" type="search" placeholder="جستجوی محصول...">
-    </div>
-
-    <div class="categories">
-      <button class="cat active" data-cat="all">همه</button>
-      <button class="cat" data-cat="telegram">تلگرام</button>
-      <button class="cat" data-cat="game">گیم</button>
-      <button class="cat" data-cat="special">ویژه</button>
-    </div>
-
-    <div style="height:12px"></div>
-
-    <section class="products" id="productList">
-
-      <article class="product" data-category="telegram" data-name="Telegram Stars">
-        <div class="productIcon">⭐</div>
-        <div class="productTitle">Telegram Stars</div>
-        <div class="productDesc">استارز تلگرام</div>
-        <div class="productBottom">
-          <div class="price">استارز</div>
-          <button class="buy" onclick="buy('Telegram Stars')">خرید</button>
-        </div>
-      </article>
-
-      <article class="product" data-category="telegram" data-name="گیفت تلگرام">
-        <div class="productIcon">🎁</div>
-        <div class="productTitle">گیفت تلگرام</div>
-        <div class="productDesc">گیفت دیجیتال</div>
-        <div class="productBottom">
-          <div class="price">ویژه</div>
-          <button class="buy" onclick="buy('گیفت تلگرام')">خرید</button>
-        </div>
-      </article>
-
-      <article class="product" data-category="telegram" data-name="Telegram Premium">
-        <div class="productIcon">💎</div>
-        <div class="productTitle">Telegram Premium</div>
-        <div class="productDesc">پریمیوم تلگرام</div>
-        <div class="productBottom">
-          <div class="price">ویژه</div>
-          <button class="buy" onclick="buy('Telegram Premium')">خرید</button>
-        </div>
-      </article>
-
-      <article class="product" data-category="game" data-name="PUBG UC">
-        <div class="productIcon">🎮</div>
-        <div class="productTitle">PUBG UC</div>
-        <div class="productDesc">شارژ UC پابجی</div>
-        <div class="productBottom">
-          <div class="price">UC</div>
-          <button class="buy" onclick="buy('PUBG UC')">خرید</button>
-        </div>
-      </article>
-
-      <article class="product" data-category="game" data-name="س
+.walletbox{
+padding:20px;
+background:linear-gradient(135deg,#171126,#
